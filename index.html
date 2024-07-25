@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portifólio</title>
+    <script type="text/javascript" src="./index.js" defer=""></script>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+
+  <body>
+
+    <h1>Meu portifólio</h1>
+
+    <br>
+
+    <img src="male_man_people_person_avatar_white_tone_icon_159363.png" height="200px" width="200px">
+
+
+    <h2>Nome: Miguel Rossetti Mocellin</h2>
+    <h2>Cidade: Lajeao-RS</h2>
+    <h2>Email: <a href="mailto:miguelro7m@gmail.com">miguelro7m@gmail.com</a></h2>
+
+    <br>
+
+    <h1>Meus Projetos:</h1>
+
+    <div class="Color1">
+      <h3>1 - IMC:</h3>
+
+      <h4>Peso</h4>
+      <input type="text" id="PesoP">
+
+      <h4>Altura</h4>
+      <input type="text" id="AlturaP">
+
+      <button id="send">Calcular</button>
+
+      <br><br>
+      <input type="text" readonly="" id="Calc">
+
+      <script>
+        let Peso = document.getElementById("PesoP")
+        let Altura = document.getElementById("AlturaP")
+        let sole = document.getElementById("Calc")
+
+        let botao = document.getElementById("send")
+        botao.onclick = function() {
+          sole.value = Peso.value / (Altura.value * Altura.value)
+        };
+      </script>
+    </div>
+
+    <br><br>
+
+    <div class="Color2">
+      <h3>2 - Calculadora</h3>
+
+      <h4>valor 1:</h4> <input type="text" id="val1">
+
+      <br><br>
+      <h4>valor 2:</h4> <input type="text" id="val2">
+
+
+      <h4>Operação</h4>
+      <button id="b1">+</button>
+      <button id="b2">-</button>
+      <button id="b3">/</button>
+      <button id="b4">*</button>
+
+      <br><br>
+
+      <input type="text" readonly="" id="Calc2">
+    </div>
+
+    <script>
+      let val1 = document.getElementById("val1")
+      let val2 = document.getElementById("val2")
+      let Calcul = document.getElementById("Calc2")
+      let opera1 = document.getElementById("b1")
+      let opera2 = document.getElementById("b2")
+      let opera3 = document.getElementById("b3")
+      let opera4 = document.getElementById("b4")
+
+
+      opera1.onclick = function() {
+        Calcul.value = parseInt(val1.value) + parseInt(val2.value)
+      };
+
+      opera2.onclick = function() {
+        Calcul.value = parseInt(val1.value) - parseInt(val2.value)
+      };
+
+      opera3.onclick = function() {
+        Calcul.value = parseInt(val1.value) / parseInt(val2.value)
+      };
+
+      opera4.onclick = function() {
+        Calcul.value = parseInt(val1.value) * parseInt(val2.value)
+      };
+    </script>
+
+    <br><br>
+    <div class="Color3">
+      <h3>3 - Login</h3>
+
+      <h4>Email</h4>
+      <input type="text" id="mail">
+
+      <h4>Senha</h4>
+      <input type="password" id="password">
+
+      <button id="send2">Login</button>
+      <br><br>
+      <input type="text" readonly="" id="log">
+
+      <script>
+        let email = document.getElementById("mail")
+        let senha = document.getElementById("password")
+        let botao2 = document.getElementById("send2")
+        let log = document.getElementById("log")
+
+        botao2.onclick = function() {
+          if (email.value == "Mingau17@gmail.com" && senha.value == "Eu123@kk") {
+            log.value = "Login efetuado com sucesso!"
+          } else {
+            log.value = "Email ou senha incorretos"
+          }
+        }
+      </script>
+    </div>
+
+    <br><br>
+
+    <div class="Color4">
+      <h3>4 - Manipulação de texto</h3>
+
+      <h4>Escreva Algo na caixa:</h4>
+
+      <textarea id="txt" cols="30" rows="3" style="resize:none"></textarea>
+      <h4 id="qtde">Quantidade</h4>
+
+      <button onclick="limpar()">Limpar</button>
+
+      <script>
+        let caixa = document.getElementById("txt")
+        let qtde = document.getElementById("qtde")
+        caixa.addEventListener("keyup", function(event) {
+          qtde.innerHTML = "Quantidade: " + caixa.value.length
+        });
+
+        function limpar() {
+          caixa.value = ""
+          qtde.innerHTML = "Quantidade: 0"
+        }
+      </script>
+
+    </div>
+
+    <br><br>
+
+    <div class="Color5">
+      <h3>5 - Data e Hora</h3>
+
+      <button type="button" id="butao">Clique-me para mostrar a data e hora!</button>
+
+      <h2 id="demo"></h2>
+
+      <script>
+        let botaohr = document.getElementById("butao")
+        let data = document.getElementById("demo")
+
+        botaohr.onclick = function() {
+          let dataAgora = new Date()
+          //alert (dataAgora)
+          data.innerText = dataAgora
+
+        };
+      </script>
+
+
+
+    </div>
+
+
+    <style>
+      body {
+        background: powderblue;
+      }
+
+      input,
+      button,
+      textarea {
+        border-radius: 8px;
+      }
+
+      button:hover {
+        background: #9dd5fa;
+      }
+
+      .Color1 {
+        background: #b8fa9d;
+        border-radius: 8px;
+        border: 10px, solid #207a0a
+      }
+
+      .Color2 {
+        background: #fa9d9d;
+        border-radius: 8px;
+        border: 10px, solid #7a0a0a
+      }
+
+      .Color3 {
+        background: #f2d174;
+        border-radius: 8px;
+        border: 10px, solid #7a6d0a
+      }
+
+      .Color4 {
+        background: #737bd1;
+        border-radius: 8px;
+        border: 10px, solid #0a137a
+      }
+
+      .Color5 {
+        background: #cc77f7;
+        border-radius: 8px;
+        border: 10px, solid #54216e
+      }
+    </style>
+
+
+  </body>
+
+</html>
